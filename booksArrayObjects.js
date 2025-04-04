@@ -1,64 +1,3 @@
-//Reduce
-
-const nums = [10, 1, 5, 25];
-
-const sum = nums.reduce((sum, curVal) => {
-  return sum + curVal;
-});
-console.log(sum);
-
-//with initial value
-const sum1 = nums.reduce((sum1, curVal) => {
-  return sum1 + curVal;
-}, 100);
-console.log(sum1);
-
-const product = nums.reduce((prod, curVal) => {
-  return prod * curVal;
-});
-console.log(product);
-
-const maxVal = nums.reduce((max, currVal) => {
-  if (currVal > max) return currVal;
-  return max;
-});
-console.log(maxVal);
-
-const votes = [
-  "y",
-  "y",
-  "y",
-  "y",
-  "y",
-  "y",
-  "y",
-  "y",
-  "y",
-  "n",
-  "n",
-  "n",
-  "n",
-  "n",
-  "n",
-];
-
-const results = votes.reduce((tally, val) => {
-  if (tally[val]) {
-    tally[val]++;
-  } else {
-    tally[val] = 1;
-  }
-  return tally;
-}, {});
-
-console.log(results);
-
-const results1 = votes.reduce((tally, val) => {
-  tally[val] = (tally[val] || 0) + 1;
-  return tally;
-}, {});
-console.log(results1);
-
 const books = [
   {
     id: 1,
@@ -72,7 +11,7 @@ const books = [
     pages: 336,
     publisher: "HarperCollins",
     language: "English",
-    isbn: "9780061120084",
+    isbn: "9780061120084"
   },
   {
     id: 2,
@@ -86,7 +25,7 @@ const books = [
     pages: 328,
     publisher: "Secker & Warburg",
     language: "English",
-    isbn: "9780451524935",
+    isbn: "9780451524935"
   },
   {
     id: 3,
@@ -95,12 +34,12 @@ const books = [
     genre: "Classic",
     publishedYear: 1925,
     rating: 3.93,
-    price: 8.5,
+    price: 8.50,
     inStock: false,
     pages: 180,
     publisher: "Charles Scribner's Sons",
     language: "English",
-    isbn: "9780743273565",
+    isbn: "9780743273565"
   },
   {
     id: 4,
@@ -114,7 +53,7 @@ const books = [
     pages: 223,
     publisher: "Bloomsbury",
     language: "English",
-    isbn: "9780747532743",
+    isbn: "9780747532743"
   },
   {
     id: 5,
@@ -128,7 +67,7 @@ const books = [
     pages: 310,
     publisher: "Allen & Unwin",
     language: "English",
-    isbn: "9780261102217",
+    isbn: "9780261102217"
   },
   {
     id: 6,
@@ -142,7 +81,7 @@ const books = [
     pages: 279,
     publisher: "T. Egerton",
     language: "English",
-    isbn: "9780141439518",
+    isbn: "9780141439518"
   },
   {
     id: 7,
@@ -156,7 +95,7 @@ const books = [
     pages: 234,
     publisher: "Little, Brown and Company",
     language: "English",
-    isbn: "9780316769488",
+    isbn: "9780316769488"
   },
   {
     id: 8,
@@ -170,7 +109,7 @@ const books = [
     pages: 1178,
     publisher: "Allen & Unwin",
     language: "English",
-    isbn: "9780618640157",
+    isbn: "9780618640157"
   },
   {
     id: 9,
@@ -178,13 +117,13 @@ const books = [
     author: "Paulo Coelho",
     genre: "Fiction",
     publishedYear: 1988,
-    rating: 3.9,
+    rating: 3.90,
     price: 10.49,
     inStock: true,
     pages: 208,
     publisher: "HarperOne",
     language: "English",
-    isbn: "9780062315007",
+    isbn: "9780062315007"
   },
   {
     id: 10,
@@ -198,14 +137,8 @@ const books = [
     pages: 489,
     publisher: "Doubleday",
     language: "English",
-    isbn: "9780307474278",
-  },
+    isbn: "9780307474278"
+  }
 ];
 
-const groupedByRating = books.reduce((groupedBooks, book) => {
-  const key = Math.floor(book.rating);
-  if (!groupedBooks[key]) groupedBooks[key] = [];
-  groupedBooks[key].push(book);
-  return groupedBooks;
-}, {});
-console.log(groupedByRating);
+console.log(books);
